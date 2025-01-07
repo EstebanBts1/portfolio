@@ -1,0 +1,356 @@
+body {
+  background-color:#818181;
+  color:#4e4e4e
+  }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+     
+  }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+  }
+  
+nav ul li a {
+    color: #fca420;
+    text-decoration: none;
+    font-size: 40px;
+  }    
+    
+    
+    
+.two {
+    grid-column: 1 / 4;
+    grid-row: 1 / 8;
+    background-image: url(fond0101.png); 
+    border-radius: 50% 30%;
+  }
+   
+  
+.two h1 {
+  padding: 5%;
+  margin: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: Black;
+  font-size: 70px; 
+  
+  }
+
+.two p {
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    color: Black;
+    font-weight: bolder;
+  }
+
+
+.three {
+    grid-column: 2 / 4;
+    grid-row: 9 / 22;
+    background: linear-gradient(grey, #333);
+    border-radius: 20% 0%;
+  }
+
+.three h1{
+  margin: 60px;
+  padding: 60px;
+  color: #fca420;
+  font-size: 40px;
+
+}
+.presentation{
+  margin: 60px;
+  color: Black;
+  font-size: 30px;
+  border: 1rem solid;
+  border-color: #333;
+}
+.diplome{
+  margin: 60px;
+  color: Black;
+  font-size: 30px;
+  border: 1rem solid;
+  border-color: #333;
+}
+.Occupations{
+  margin: 60px;
+  color: Black;
+  font-size: 30px;
+  border: 1rem solid;
+  border-color: #333;
+}
+.four {
+    grid-column: 1/2 ;
+    grid-row: 11 / 17;
+}
+
+.five {
+    grid-column: 1/4;
+    grid-row: 24 / 34;
+    background-color: #333;
+
+}
+.five h1 {
+  text-align: center;
+  color: #fca420;
+  font-size: 40px;
+}
+
+
+
+.six h1{
+  margin: 2px;
+  padding: 0px;
+  color: #fca420;
+  font-size: 40px;
+}
+
+
+
+
+
+
+
+.six {
+    grid-column: 1 / 4;
+    grid-row: 35 / 42;
+    background-color: #333;
+  }
+
+
+
+
+
+
+
+.titre1{
+  text-decoration: none;
+  color: Black;
+  font-weight: bold;
+  font-size: 1em;
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+header {
+  background-color: #333;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 10px 100px / 120px;
+  border: 1em solid;
+  color: Black;
+  
+  }
+
+
+  html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Définition d'un container pour gérer l'affichage */
+.container {
+    overflow: hidden;
+    /* Cache les éléments qui dépassent du container */
+}
+
+/* Définition du carousel */
+.carousel {
+    position: relative;
+    /* Le carousel est positionné relativement à son parent */
+}
+
+/* Définition de l'élément contenant les diapositives */
+.carousel-inner {
+    display: flex;
+    /* Affiche les éléments en ligne */
+    overflow: hidden;
+    /* Cache les éléments qui dépassent */
+    height: 90vh;
+    /* Hauteur égale à 100% de la hauteur de la vue */
+    flex-wrap: nowrap;
+    /* Empêche les éléments de se placer sur plusieurs lignes */
+}
+
+/* Définition des diapositives */
+.slide {
+    flex: 0 0 100%;
+    /* Largeur de chaque diapositive est de 100% */
+    height: 95%;
+    /* Hauteur de chaque diapositive est de 100% */
+    transition: .2s ease-in-out;
+    /* Ajout d'une animation douce pour la transition entre les diapositives */
+}
+
+/* Définition de l'affichage de l'image de chaque diapositive */
+.slide img {
+    width: 100%;
+    /* Largeur de l'image est de 100% */
+    height: 100%;
+    /* Hauteur de l'image est de 100% */
+    object-fit: cover;
+    /* Couvre tout l'espace disponible */
+}
+
+/* Définition des boutons de contrôle du carousel */
+.carousel-controls {
+    position: absolute;
+    /* Les boutons sont absolument positionnés */
+    z-index: 5;
+    /* Ils sont placés au-dessus des autres éléments */
+    left: 10%;
+    /* La distance à gauche est de 10% */
+    right: 10%;
+    /* La distance à droite est de 10% */
+    top: 50%;
+    /* La distance du haut est de 50% */
+    display: flex;
+    /* Affiche les boutons en ligne */
+    justify-content: space-between;
+    /* Espacement égal entre les boutons */
+}
+
+/* Style des boutons de contrôle */
+.carousel-controls button {
+    padding: 10px;
+    /* Ajout de padding pour un meilleur contrôle */
+    background-color: aquamarine;
+    /* Arrière-plan en aquamarine */
+}
+
+/* Définition des points de contrôle */
+.carousel-dots {
+    position: absolute;
+    /* Les points sont absolument positionnés */
+    z-index: 5;
+    /* Ils sont placés au-dessus des autres éléments */
+    left: 40%;
+    /* La distance à gauche est de 50% */
+    right: 40%;
+    /* La distance à droite est de 50% */
+    bottom: 10%;
+    /*La distance du bas est de 10% */
+    display: flex;
+    /* Affiche les points en ligne */
+    justify-content: center;
+    /* Centrage des points */
+}
+
+/* Style des points de contrôle */
+.carousel-dots .dot {
+    border-radius: 50%;
+    /* Les points sont en forme de cercle */
+    margin: 5px;
+    /* Ajout d'un margin pour un meilleur contrôle */
+    cursor: pointer;
+    /* Curseur en forme de main pour un meilleur contrôle */
+}
+
+/* Styles pour les points de navigation du carrousel */
+.carousel-dots .active {
+    /* Border de 10px pour le point actif */
+    border: 10px solid #761530 !important;
+    /* !important permet de surcharger les autres styles éventuels */
+}
+
+.carousel-dots .inactive {
+    /* Border de 10px pour les points inactifs */
+    border: 10px solid #2596be;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styles pour les champs de saisie */
+form .form-control {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #fca420;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Styles pour le bouton */
+form .button {
+  background: linear-gradient(45deg, #fca420, #fca420);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form .button:hover {
+  background: linear-gradient(45deg, #693e05, #693e05);
+  transform: translateY(-2px);
+}
+
+/* Ajout d'espacement entre les champs */
+form .row .col-md-12.mb-3 {
+  margin-bottom: 15px;
+}
+
+/* Mise en forme des titres */
+.title-box-2 h5 {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-left: 5px solid #333;
+  padding-left: 10px;
+}
+
