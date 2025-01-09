@@ -10,110 +10,159 @@
     
 </head>
 <body>
-    <header>
-        <nav> 
-            <ul>
-                <li class="titre1">Portfolio :</li>
-                <li><a href="#propos">A propos</a></li>
-                <li><a href="#projet">projets</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </nav>
-    </header><br>
-    <div class="wrapper">    
-            <div class="two">
+  <header>
+    <nav> 
+        <ul>
+            <li class="titre1">Portfolio :</li>
+            <li><a href="#propos">A propos</a></li>
+            <li><a href="#projet">projet</a></li>
+            <li><a href="#competences">Compétences</a>
+                <ul class="dropdown">
+                    <li><a href="#html">Html</a></li>
+                    <li><a href="#js">Javascript</a></li>
+                    <li><a href="#mysql">Mysql</a></li>
+                    <li><a href="#css">css</a></li>
+                    <li><a href="#php">php</a></li>
+                    <li><a href="#github">gitHub</a></li>
+                    <li><a href="#windows">Windows</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <div class="wrapper">
+          <section class="Moi">
+            <div class="one">
                     <H1 class="first">Esteban Chaussinand</H1>
                     <p class="first">Étudiant en 1er année de BTS SIO au lycée simone weil</p>
             </div>
-            <div class="three">
-                    <p id="propos"></p>
-                    <h1>A propos</H1>
-                        <div class=presentation>
-                            <H2>Présentation</H2>
-                            Nom: Chaussinand<br>
-                            Prenom: Esteban<br>
-                            Age: 18 Ans<br>
-                            Telephone: 07 83 41 44 98<br>
-                            Email: estebanchaussinand@gmail.com<br>
-                        </div>
-                        <div class=diplome>
-                            <H2>Diplomes et certification</H2>
-                            Diplome acquis: Bac sti2d option SIN, Brevet des collèges<br>
-                            Diplome en cours: BTS SIO bientot en dev<br>
-                            Certfification finie: Certification PIX
-                        </div>
-                        <div class="Occupations">
-                            <H2>Passe temps</H2>
-                            Detruire des noobs sur clash royale<br>
-                            Faire de la programation de site web<br>
-                            Jouer a d'autre jeux vidéos
-                        </div>
+          </section> 
+
+          <section> 
+            <div class="two">
+                <p id="propos"></p><br><br>
+                <h1>A propos</h1>
+                <div class="box presentation">
+                    <h2>Présentation</h2>
+                    Nom: Chaussinand<br>
+                    Prénom: Esteban<br>
+                    Age: 18 Ans<br>
+                    Téléphone: 07 83 41 44 98<br>
+                    Email: estebanchaussinand@gmail.com<br>
+                </div>
+                <div class="box diplome">
+                    <h2>Diplômes et certification</h2>
+                    Diplôme acquis: Bac STI2D option SIN, Brevet des collèges<br>
+                    Diplôme en cours: BTS SIO bientôt en dev<br>
+                    Certification finie: Certification PIX
+                </div>
+                <div class="box occupations">
+                    <h2>Passe temps</h2>
+                    Jouer calmement à Clash Royale<br>
+                    Faire de la programmation de site web<br>
+                    Jouer à d'autres jeux vidéos<br>
+                    Regarder des animés
+                </div>
             </div> 
+        </section>
 
+        <section>
+          <div class="three">
+            <p id="competences"></p><br><br>
+            <h1>Compétences</H1>
+              <div>
+                <p id="html"></p><br><br>
+                <h2>Niveau HTML : 70%</h2>
+            </div>
+            <div>
+              <p id="js"></p><br><br>
+                <h2>Niveau Javascript : 60%</h2>
+            </div>
+            <div>
+              <p id="mysql"></p><br><br>
+                <h2>Niveau Mysql : 60%</h2>
+            </div>
+            <div>
+              <p id="css"></p><br><br>
+              <h2>Niveau CSS : 60%</h2>
+            </div>
+            <div>
+              <p id="php"></p><br><br>
+              <h2>Niveau PHP : 40%</h2>
+            </div>
+            <div>
+              <p id="github"></p><br><br>
+              <h2>Niveau gitHub : 60%</h2>
+            </div>
+            <div>
+              <p id="windows"></p><br><br>
+              <h2>Niveau Windows : 60%</h2>
+            </div>
+          </div> 
+        </section>
 
+        <section> 
             <div class="four">
-                <img src="diploma-309947_960_720.webp">
-            </div>
+              <p id="projet"></p><br><br>
+              <h1>projets</H1>
+                <div class="carousel">
+                  <div class="carousel-track">
+                    <div class="carousel-item"><img src="image4.png" alt="Image 4"></div>
+                    <div class="carousel-item"><img src="image5.png" alt="Image 5"></div>
+                    <div class="carousel-item"><img src="image6.png" alt="Image 6"></div>
+                  </div>
+                  <button class="carousel-button prev">&lt;</button>
+                  <button class="carousel-button next">&gt;</button>
+                </div>
+          </div>
+        </section> 
 
-            <div class="five">
-                <p id="projet"></p>
-                <h1>projets</H1>
-                    <div class="container">
-                        <div class="carousel">
-                            
-                            <div class="carousel-inner">
-                                
-                                <div class="slide">
-                                    <img src="image4.png" alt="Image 1">
-                                </div>
-                                
-                                <div class="slide">
-                                    <img src="image5.png" alt="Image 2">
-                                </div>
-                                
-                                <div class="slide">
-                                    <img src="image6.png" alt="Image 3">
-                                </div>
-                            </div>
-
-                            <div class="carousel-controls">
-                               
-                                <button id="prev">Précédent</button>
-                                
-                                <button id="next">Suivant</button>
-                            </div>
-                           
-                            <div class="carousel-dots"></div>
-                        </div>
+          <section>
+            <div class="six">
+              <p id="contact"></p>
+              <h1>Contact</H1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5>Me contacter</h5>
                     </div>
-            </div>
-
-        <div class="six">
-            <p id="contact"></p>
-                <h1>A propos</H1>
-                        <h5>Me contacter</h5>
-                            <div class="row">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required minlength="1" required="">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required minlength="1" required="">
-                                </div>
-            
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required minlength="1" required="">
-                                </div>
-                            
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required minlength="1" required=""></textarea>
-                                </div>
-                            
-                                <button type="submit" class="button button-a button-big button-rouded">Envoyé</button>
-                                
+                    <div>
+                      <form target="_blank" action="estebanchaussinand@gmail.com" method="post">
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required minlength="1" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required minlength="1" required="">
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required minlength="1" required="">
+                          </div>
+                        </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required minlength="1" required=""></textarea>
                             </div>
-        </div>
-    </div>
+                          </div>
+                          <div class="mt-5 col-md-12 text-center">
+                            <button type="submit" class="button button-a button-big button-rouded">Envoyé</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>         
+                </div>
+            </div>
+          </section>
+    </div> 
 </body>
 </html> 
 
