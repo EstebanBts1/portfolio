@@ -1,66 +1,74 @@
-(function () {
-    "use stict"
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
 
-    const slideTimeout = 5000;
+let currentIndex = 0;
+const totalItems = items.length;
+const delay = 3000; // Temps en millisecondes pour le défilement automatique
 
-    const prev = document.querySelector('#prev');
-    const next = document.querySelector('#next');
+function updateCarousel() {
+  const offset = -currentIndex * 100; // Calculer le décalage
+  track.style.transform = `translateX(${offset}%)`;
+}
 
-    const $slides = document.querySelectorAll('.slide');
+function showNextSlide() {
+  currentIndex = (currentIndex + 1) % totalItems; // Passer à l'élément suivant
+  updateCarousel();
+}
 
-    let $dots;
+function showPrevSlide() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Revenir à l'élément précédent
+  updateCarousel();
+}
 
-    let intervalId;
+// Ajouter des événements aux boutons
+nextButton.addEventListener('click', showNextSlide);
+prevButton.addEventListener('click', showPrevSlide);
 
-    let currentSlide = 1;
+// Défilement automatique
+setInterval(showNextSlide, delay);
 
-    function slideTo(index) {
-        currentSlide = index >= $slides.length || index < 1 ? 0 : index;
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
 
-        $slides.forEach($elt => $elt.style.transform = `translateX(-${currentSlide * 100}%)`);
+  form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
-        $dots.forEach(($elt, key) => $elt.classList = `dot ${key === currentSlide? 'active': 'inactive'}`);
-    }
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.querySelector('textarea[name="message"]').value.trim();
 
-    function showSlide() {
-        slideTo(currentSlide);
-        currentSlide++;
-    }
+      let errors = [];
 
-    for (let i = 1; i <= $slides.length; i++) {
-        let dotClass = i == currentSlide ? 'active' : 'inactive';
-        let $dot = `<span data-slidId="${i}" class="dot ${dotClass}"></span>`;
-        document.querySelector('.carousel-dots').innerHTML += $dot;
-    }
+      // Vérification du champ nom
+      if (name.length < 1) {
+          errors.push("Le champ 'Nom' est obligatoire.");
+      }
 
-    $dots = document.querySelectorAll('.dot');
+      // Vérification du champ email (simple regex pour vérifier la validité de l'email)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+          errors.push("Veuillez entrer une adresse email valide.");
+      }
 
-    $dots.forEach(($elt, key) => $elt.addEventListener('click', () => slideTo(key)));
+      // Vérification du champ sujet
+      if (subject.length < 1) {
+          errors.push("Le champ 'Sujet' est obligatoire.");
+      }
 
-    prev.addEventListener('click', () => slideTo(--currentSlide))
+      // Vérification du champ message
+      if (message.length < 1) {
+          errors.push("Le champ 'Message' est obligatoire.");
+      }
 
-    next.addEventListener('click', () => slideTo(++currentSlide))
-
-    intervalId = setInterval(showSlide, slideTimeout)
-    $slides.forEach($elt => {
-        let startX;
-        let endX;
-        $elt.addEventListener('mouseover', () => {
-            clearInterval(intervalId);
-        }, false)
-        $elt.addEventListener('mouseout', () => {
-            intervalId = setInterval(showSlide, slideTimeout);
-        }, false);
-        $elt.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].clientX;
-        });
-        $elt.addEventListener('touchend', (event) => {
-            endX = event.changedTouches[0].clientX;
-            if (startX > endX) {
-                slideTo(currentSlide + 1);
-            } else if (startX < endX) {
-                slideTo(currentSlide - 1);
-            }
-        });
-    })
-})()
+      // Afficher un message selon le résultat
+      if (errors.length > 0) {
+          alert("Échec : \n" + errors.join("\n"));
+      } else {
+          alert("Formulaire réussi !");
+          form.reset(); // Réinitialise le formulaire après succès
+      }
+  });
+});
